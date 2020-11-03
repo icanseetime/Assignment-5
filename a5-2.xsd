@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+  <!-- Simple elements -->
+  <xs:element name="cookbook" type="xs:string" />
+ <xs:element name="cake" type="xs:string" />
+ <xs:element name="name" type="xs:string" />
+ <xs:element name="serves" type="xs:int" />
+ <xs:element name="time" type="xs:int" />
+ <xs:element name="temperature" type="xs:int" />
+ <xs:element name="oven-type" type="xs:string" />
+ <xs:element name="difficulty" type="xs:string" />
+ 
+
+
+  <!-- True simple -->
+  <xs:element name="name" type="xs:string" /> 
+  <xs:element name="serves" type="xs:int" />
+  <xs:element name="time" type="xs:int" />
+  <xs:element name="oven-type" type="xs:string" />
+  <xs:element name="difficulty" type="xs:string" />
+
+  <!-- Attributes -->
+
+
+
+
+
+
+
+</xs:schema>

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+    <!-- Root: Cookbook -->
+    <xs:element name="cookbook">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Cake -->
+                <xs:element name="cake" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+
+                            <!-- Name -->
+                            <xs:element name="name" type="xs:string" />
+
+                            <!-- Serves -->
+                            <xs:element name="serves">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:int">
+                                        <xs:minInclusive value="2" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <!-- Cooking time -->
+                            <xs:element name="time">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:int">
+                                        <xs:maxInclusive value="300" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <!-- Cooking temperature -->
+                            <xs:element name="temperature" type="xs:int">
+                                <xs:complexType>
+                                    <xs:attribute name="type" use="required">
+                                        <xs:complexContent>
+                                            <xs:restriction base="xs:string">
+                                                <xs:enumeration value="fahrenheit" />
+                                                <xs:enumeration value="celsius" />
+                                            </xs:restriction>
+                                        </xs:complexContent>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+
+
+                            <!-- Oven type -->
+                            <xs:element name="oven-type">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Gas" />
+                                        <xs:enumeration value="Fan" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+
+                            <!-- Difficulty -->
+                            <xs:element name="difficulty">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Easy" />
+                                        <xs:enumeration value="Medium" />
+                                        <xs:enumeration value="Professional" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <!-- Special remarks -->
+                            <xs:element name="special-remarks" type="xs:string" minOccurs="0" />
+
+                            <!-- Recipe -->
+                            <xs:element name="recipe">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <!-- Ingredient -->
+                                        <xs:element name="ingredient" minOccurs="2" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <!-- Type of ingredient -->
+                                                    <xs:element name="type" type="xs:string" />
+                                                    <!-- Quantity -->
+                                                    <xs:element name="quantity" type="xs:decimal">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="type" type="xs:string" use="required">
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="xs:string">
+                                                                        <xs:enumeration value="pieces" />
+                                                                        <xs:enumeration value="grams" />
+                                                                        <xs:enumeration value="teaspoons" />
+                                                                        <xs:enumeration value="tablespoons" />
+                                                                        <xs:enumeration value="ml" />
+                                                                        <xs:enumeration value="cups" />
+                                                                    </xs:restriction>
+                                                                </xs:simpleType>
+                                                            </xs:attribute>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+
+    </xs:element>
+</xs:schema>
