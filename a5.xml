@@ -1,80 +1,80 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<cookbook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="a5.xsd">
+<cookbook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="a5-2.xsd">
     <cake>
         <name>Pavlova</name>
         <serves>8</serves>
-        <time unit="minutes">90</time>
-        <temperature type="fahrenheit">200</temperature>
-        <oven-type>Fan</oven-type>
+        <!-- Må få satt attribute på denne i xsd -->
+        <time timeInterval="minutes">90</time>
+        <temperature degrees="fahrenheit">200</temperature>
+        <ovenType>Fan</ovenType>
         <difficulty>Medium</difficulty>
-        <special-remarks>Gluten-free</special-remarks>
+        <specialRemarks>Gluten-free</specialRemarks>
         <recipe>
             <ingredient>
                 <type>Egg whites</type>
-                <quantity type="pieces">4</quantity>
+                <quantity measuringType="pieces">4</quantity>
             </ingredient>
             <ingredient>
                 <type>Superfine sugar</type>
-                <quantity type="grams">200</quantity>
+                <quantity measuringType="grams">200</quantity>
             </ingredient>
             <ingredient>
                 <type>Vanilla extract</type>
-                <quantity type="teaspoons">1</quantity>
+                <quantity measuringType="teaspoons">1</quantity>
             </ingredient>
             <ingredient>
                 <type>Cornstarch</type>
-                <quantity type="teaspoons">1</quantity>
+                <quantity measuringType="teaspoons">1</quantity>
             </ingredient>
             <ingredient>
                 <type>White vinegar</type>
-                <quantity type="tablespoons">2</quantity>
+                <quantity measuringType="tablespoons">2</quantity>
             </ingredient>
         </recipe>
     </cake>
     <cake>
         <name>Carrot cake</name>
         <serves>10</serves>
-        <time unit="minutes">30</time>
-        <temperature type="celsius">160</temperature>
-        <oven-type>Gas</oven-type>
+        <time timeInterval="minutes">30</time>
+        <temperature degrees="celsius">160</temperature>
+        <ovenType>Gas</ovenType>
         <difficulty>Easy</difficulty>
         <recipe>
             <ingredient>
                 <type>All-purpose flour</type>
-                <quantity type="grams">250</quantity>
+                <quantity measuringType="grams">250</quantity>
             </ingredient>
             <ingredient>
                 <type>Baking soda</type>
-                <quantity type="teaspoons">2</quantity>
+                <quantity measuringType="teaspoons">2</quantity>
             </ingredient>
             <ingredient>
                 <type>Cinnamon</type>
-                <quantity type="teaspoons">1</quantity>
+                <quantity measuringType="teaspoons">1</quantity>
             </ingredient>
             <ingredient>
                 <type>Sunflower oil</type>
-                <quantity type="ml">290</quantity>
+                <quantity measuringType="ml">290</quantity>
             </ingredient>
             <ingredient>
                 <type>Superfine salt</type>
-                <quantity type="teaspoons">0.5</quantity>
-                <!-- TODO: specify that decimals are allowed?  -->
+                <quantity measuringType="teaspoons">0.5</quantity>
             </ingredient>
             <ingredient>
                 <type>Sugar</type>
-                <quantity type="grams">200</quantity>
+                <quantity measuringType="grams">200</quantity>
             </ingredient>
             <ingredient>
                 <type>Vanilla extract</type>
-                <quantity type="teaspoons">1</quantity>
+                <quantity measuringType="teaspoons">1</quantity>
             </ingredient>
             <ingredient>
                 <type>Grated carrots</type>
-                <quantity type="cups">3</quantity>
+                <quantity measuringType="cups">3</quantity>
             </ingredient>
             <ingredient>
                 <type>Eggs</type>
-                <quantity type="pieces">4</quantity>
+                <quantity measuringType="pieces">4</quantity>
             </ingredient>
         </recipe>
     </cake>

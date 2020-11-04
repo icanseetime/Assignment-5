@@ -1,31 +1,134 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
 
   <!-- Simple elements -->
-  <xs:element name="cookbook" type="xs:string" />
- <xs:element name="cake" type="xs:string" />
- <xs:element name="name" type="xs:string" />
- <xs:element name="serves" type="xs:int" />
- <xs:element name="time" type="xs:int" />
- <xs:element name="temperature" type="xs:int" />
- <xs:element name="oven-type" type="xs:string" />
- <xs:element name="difficulty" type="xs:string" />
- 
+  <xs:element name="name" type="xs:string" />
 
+  <xs:element name="serves">
+    <xs:simpleType>
+      <xs:restriction base="xs:int">
+        <xs:minInclusive value="2" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
 
-  <!-- True simple -->
-  <xs:element name="name" type="xs:string" /> 
-  <xs:element name="serves" type="xs:int" />
-  <xs:element name="time" type="xs:int" />
-  <xs:element name="oven-type" type="xs:string" />
-  <xs:element name="difficulty" type="xs:string" />
+  <xs:element name="oven-type">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="Gas" />
+        <xs:enumeration value="Fan" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="difficulty">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="Easy" />
+        <xs:enumeration value="Medium" />
+        <xs:enumeration value="Professional" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+  <xs:element name="specialRemarks" type="xs:string" />
+
+  <xs:element name="type" type="xs:string" />
+
 
   <!-- Attributes -->
+  <xs:attribute name="timeInterval">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="minutes" />
+        <xs:enumeration value="hours" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+
+  <xs:attribute name="degrees">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="fahrenheit" />
+        <xs:enumeration value="celsius" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+
+  <xs:attribute name="measuringType">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="pieces" />
+        <xs:enumeration value="grams" />
+        <xs:enumeration value="teaspoons" />
+        <xs:enumeration value="tablespoons" />
+        <xs:enumeration value="ml" />
+        <xs:enumeration value="cups" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
 
 
+  <!-- Complex elements -->
+  <xs:element name="cookbook" type="xs:string">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="cake" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 
+  <xs:element name="cake" type="xs:string">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="name" />
+        <xs:element ref="serves" />
+        <xs:element ref="time" />
+        <xs:element ref="temperature" />
+        <xs:element ref="ovenType" />
+        <xs:element ref="difficulty" />
+        <xs:element ref="specialRemarks" minOccurs="0" />
+        <xs:element ref="recipe" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 
+  <xs:element name="time" type="xs:int">
+    <xs:complexType>
+      <xs:restriction base="xs:int">
+        <xs:maxInclusive value="300" />
+      </xs:restriction>
+      <xs:attribute ref="timeInterval" use="required" />
+    </xs:complexType>
+  </xs:element>
 
+  <xs:element name="temperature" type="xs:int">
+    <xs:complexType>
+      <xs:attribute ref="degrees" use="required" />
+    </xs:complexType>
+  </xs:element>
 
+  <xs:element name="recipe" type="xs:string">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ingredient" minOccurs="2" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ingredient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="type" />
+        <xs:element ref="quantity" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="quantity" type="xs:decimal">
+    <xs:complexType>
+      <xs:attribute ref="measuringType" use="required" />
+    </xs:complexType>
+  </xs:element>
 
 </xs:schema>

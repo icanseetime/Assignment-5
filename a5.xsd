@@ -23,30 +23,31 @@
 
                             <!-- Cooking time -->
                             <xs:element name="time">
-                                <xs:simpleType>
+                                <!-- Missing attribute here, fix problem with "degrees" first, same problem will happen here -->
+                                <xs:complexType>
                                     <xs:restriction base="xs:int">
                                         <xs:maxInclusive value="300" />
                                     </xs:restriction>
-                                </xs:simpleType>
+                                </xs:complexType>
                             </xs:element>
 
                             <!-- Cooking temperature -->
                             <xs:element name="temperature" type="xs:int">
                                 <xs:complexType>
-                                    <xs:attribute name="type" use="required">
-                                        <xs:complexContent>
+                                    <xs:attribute name="degrees" use="required">
+                                        <xs:simpleContent>
                                             <xs:restriction base="xs:string">
                                                 <xs:enumeration value="fahrenheit" />
                                                 <xs:enumeration value="celsius" />
                                             </xs:restriction>
-                                        </xs:complexContent>
+                                        </xs:simpleContent>
                                     </xs:attribute>
                                 </xs:complexType>
                             </xs:element>
 
 
                             <!-- Oven type -->
-                            <xs:element name="oven-type">
+                            <xs:element name="ovenType">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
                                         <xs:enumeration value="Gas" />
@@ -68,7 +69,7 @@
                             </xs:element>
 
                             <!-- Special remarks -->
-                            <xs:element name="special-remarks" type="xs:string" minOccurs="0" />
+                            <xs:element name="specialRemarks" type="xs:string" minOccurs="0" />
 
                             <!-- Recipe -->
                             <xs:element name="recipe">
@@ -83,7 +84,7 @@
                                                     <!-- Quantity -->
                                                     <xs:element name="quantity" type="xs:decimal">
                                                         <xs:complexType>
-                                                            <xs:attribute name="type" type="xs:string" use="required">
+                                                            <xs:attribute name="measuringType" type="xs:string" use="required">
                                                                 <xs:simpleType>
                                                                     <xs:restriction base="xs:string">
                                                                         <xs:enumeration value="pieces" />

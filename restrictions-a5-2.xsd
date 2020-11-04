@@ -1,0 +1,45 @@
+<!-- Restrictions -->
+<!-- serves -->
+<!-- <xs:restriction base="xs:int">
+    <xs:minInclusive value="2" />
+  </xs:restriction> -->
+
+<!-- time -->
+<!-- <xs:restriction base="xs:int">
+    <xs:maxInclusive value="300" />
+  </xs:restriction> -->
+
+<!-- time > timeInterval -->
+<!-- <xs:restriction base="xs:string">
+    <xs:enumeration value="minutes" />
+    <xs:enumeration value="hours" />
+  </xs:restriction> -->
+
+<!-- temperature > degrees -->
+<!-- <xs:restriction base="xs:string">
+    <xs:enumeration value="fahrenheit" />
+    <xs:enumeration value="celsius" />
+  </xs:restriction> -->
+
+<!-- ovenType -->
+<!-- <xs:restriction base="xs:string">
+    <xs:enumeration value="Gas" />
+    <xs:enumeration value="Fan" />
+  </xs:restriction> -->
+
+<!-- difficulty -->
+<!-- <xs:restriction base="xs:string">
+    <xs:enumeration value="Easy" />
+    <xs:enumeration value="Medium" />
+    <xs:enumeration value="Professional" />
+  </xs:restriction> -->
+
+<!-- recipe > ingredient > quantity > measuringType -->
+<!-- <xs:restriction base="xs:string">
+    <xs:enumeration value="pieces" />
+    <xs:enumeration value="grams" />
+    <xs:enumeration value="teaspoons" />
+    <xs:enumeration value="tablespoons" />
+    <xs:enumeration value="ml" />
+    <xs:enumeration value="cups" />
+  </xs:restriction> -->
