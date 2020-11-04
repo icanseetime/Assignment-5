@@ -23,28 +23,21 @@
 
                             <!-- Cooking time -->
                             <xs:element name="time">
-                                <!-- Missing attribute here, fix problem with "degrees" first, same problem will happen here -->
-                                <xs:complexType>
-                                    <xs:restriction base="xs:int">
-                                        <xs:maxInclusive value="300" />
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:duration">
+                                        <xs:maxInclusive value="PT300M" />
                                     </xs:restriction>
-                                </xs:complexType>
+                                </xs:simpleType>
                             </xs:element>
 
                             <!-- Cooking temperature -->
-                            <xs:element name="temperature" type="xs:int">
-                                <xs:complexType>
-                                    <xs:attribute name="degrees" use="required">
-                                        <xs:simpleContent>
-                                            <xs:restriction base="xs:string">
-                                                <xs:enumeration value="fahrenheit" />
-                                                <xs:enumeration value="celsius" />
-                                            </xs:restriction>
-                                        </xs:simpleContent>
-                                    </xs:attribute>
-                                </xs:complexType>
+                            <xs:element name="temperature">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="([0-9])*\s(°F|°C)" />
+                                    </xs:restriction>
+                                </xs:simpleType>
                             </xs:element>
-
 
                             <!-- Oven type -->
                             <xs:element name="ovenType">
@@ -55,7 +48,6 @@
                                     </xs:restriction>
                                 </xs:simpleType>
                             </xs:element>
-
 
                             <!-- Difficulty -->
                             <xs:element name="difficulty">
@@ -82,20 +74,12 @@
                                                     <!-- Type of ingredient -->
                                                     <xs:element name="type" type="xs:string" />
                                                     <!-- Quantity -->
-                                                    <xs:element name="quantity" type="xs:decimal">
+                                                    <xs:element name="quantity">
                                                         <xs:complexType>
-                                                            <xs:attribute name="measuringType" type="xs:string" use="required">
-                                                                <xs:simpleType>
-                                                                    <xs:restriction base="xs:string">
-                                                                        <xs:enumeration value="pieces" />
-                                                                        <xs:enumeration value="grams" />
-                                                                        <xs:enumeration value="teaspoons" />
-                                                                        <xs:enumeration value="tablespoons" />
-                                                                        <xs:enumeration value="ml" />
-                                                                        <xs:enumeration value="cups" />
-                                                                    </xs:restriction>
-                                                                </xs:simpleType>
-                                                            </xs:attribute>
+                                                            <xs:sequence>
+                                                                <xs:element name="amount" type="xs:decimal" />
+                                                                <xs:element name="measuringType" type="xs:string" />
+                                                            </xs:sequence>
                                                         </xs:complexType>
                                                     </xs:element>
                                                 </xs:sequence>

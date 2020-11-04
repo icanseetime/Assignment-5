@@ -1,80 +1,121 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<cookbook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="a5-2.xsd">
+<cookbook xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="a5.xsd">
     <cake>
         <name>Pavlova</name>
         <serves>8</serves>
-        <!-- Må få satt attribute på denne i xsd -->
-        <time timeInterval="minutes">90</time>
-        <temperature degrees="fahrenheit">200</temperature>
+        <time>PT90M</time>
+        <temperature>200 °F</temperature>
         <ovenType>Fan</ovenType>
         <difficulty>Medium</difficulty>
         <specialRemarks>Gluten-free</specialRemarks>
         <recipe>
             <ingredient>
                 <type>Egg whites</type>
-                <quantity measuringType="pieces">4</quantity>
+                <quantity>
+                    <amount>4</amount>
+                    <measuringType>pieces</measuringType>
+                </quantity>
             </ingredient>
             <ingredient>
                 <type>Superfine sugar</type>
-                <quantity measuringType="grams">200</quantity>
+                <quantity>
+                    <amount>200</amount>
+                    <measuringType>grams</measuringType>
+                </quantity>
             </ingredient>
             <ingredient>
                 <type>Vanilla extract</type>
-                <quantity measuringType="teaspoons">1</quantity>
+                <quantity>
+                    <amount>1</amount>
+                    <measuringType>teaspoons</measuringType>
+                </quantity>
             </ingredient>
             <ingredient>
                 <type>Cornstarch</type>
-                <quantity measuringType="teaspoons">1</quantity>
+                <quantity>
+                    <amount>1</amount>
+                    <measuringType>teaspoons</measuringType>
+                </quantity>
             </ingredient>
             <ingredient>
                 <type>White vinegar</type>
-                <quantity measuringType="tablespoons">2</quantity>
+                <quantity>
+                    <amount>2</amount>
+                    <measuringType>tablespoons</measuringType>
+                </quantity>
             </ingredient>
         </recipe>
     </cake>
     <cake>
         <name>Carrot cake</name>
         <serves>10</serves>
-        <time timeInterval="minutes">30</time>
-        <temperature degrees="celsius">160</temperature>
+        <time>PT30M</time>
+        <temperature>160 °C</temperature>
         <ovenType>Gas</ovenType>
         <difficulty>Easy</difficulty>
         <recipe>
             <ingredient>
                 <type>All-purpose flour</type>
-                <quantity measuringType="grams">250</quantity>
+                <quantity>
+                    <amount>250</amount>
+                    <measuringType>grams</measuringType>
+                </quantity>
             </ingredient>
             <ingredient>
                 <type>Baking soda</type>
-                <quantity measuringType="teaspoons">2</quantity>
+                <quantity>
+                    <amount>2</amount>
+                    <measuringType>teaspoons</measuringType>
+                </quantity>
             </ingredient>
             <ingredient>
                 <type>Cinnamon</type>
-                <quantity measuringType="teaspoons">1</quantity>
+                <quantity>
+                    <amount>1</amount>
+                    <measuringType>teaspoons</measuringType>
+                </quantity>
             </ingredient>
             <ingredient>
                 <type>Sunflower oil</type>
-                <quantity measuringType="ml">290</quantity>
+                <quantity>
+                    <amount>290</amount>
+                    <measuringType>ml</measuringType>
+                </quantity>
             </ingredient>
             <ingredient>
                 <type>Superfine salt</type>
-                <quantity measuringType="teaspoons">0.5</quantity>
+                <quantity>
+                    <amount>0.5</amount>
+                    <measuringType>teaspoons</measuringType>
+                </quantity>
             </ingredient>
             <ingredient>
                 <type>Sugar</type>
-                <quantity measuringType="grams">200</quantity>
+                <quantity>
+                    <amount>200</amount>
+                    <measuringType>grams</measuringType>
+                </quantity>
             </ingredient>
             <ingredient>
                 <type>Vanilla extract</type>
-                <quantity measuringType="teaspoons">1</quantity>
+                <quantity>
+                    <amount>1</amount>
+                    <measuringType>teaspoons</measuringType>
+                </quantity>
             </ingredient>
             <ingredient>
                 <type>Grated carrots</type>
-                <quantity measuringType="cups">3</quantity>
+                <quantity>
+                    <amount>3</amount>
+                    <measuringType>cups</measuringType>
+                </quantity>
             </ingredient>
             <ingredient>
                 <type>Eggs</type>
-                <quantity measuringType="pieces">4</quantity>
+                <quantity>
+                    <amount>4</amount>
+                    <measuringType>pieces</measuringType>
+                </quantity>
             </ingredient>
         </recipe>
     </cake>

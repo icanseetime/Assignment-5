@@ -93,7 +93,7 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:element name="time" type="xs:int">
+  <xs:element name="time">
     <xs:complexType>
       <xs:restriction base="xs:int">
         <xs:maxInclusive value="300" />
